@@ -1,0 +1,31 @@
+.tab-bar {
+    width: 100%;
+    background-color: #f9e8b6;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tab-group {
+    display: flex;
+  }
+  
+  .tab-item {
+    margin-left: 40px;
+    margin-right: 140px;
+    cursor: pointer;
+    font-size: 30px; /* Font size */
+    font-weight: bold; /* Make the font weight bold */
+  }
+  
+  .logout-button {
+    cursor: pointer;
+    font-size: 30px; /* Font size */
+    font-weight: bold; /* Make the font weight bold */
+    margin-right: 30px;
+  }
+  
+  .logout-link {
+    color: #000000;
+  }
+  

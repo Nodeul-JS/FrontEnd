@@ -1,0 +1,62 @@
+.main-rectangle {
+  border: 30px solid #C5A178;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 800px;
+  padding: 20px;
+  background-color: #FFF6EC;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 50px;
+  position: relative; /* 상대 위치 설정 */
+
+  /* .group-actions를 상단에 위치시키기 위한 스타일 */
+  padding-top: 20px; /* .group-actions과의 간격 조정 */
+}
+
+.group-actions {
+  display: flex;
+  justify-content: space-between;
+  
+  position: absolute; /* 절대 위치 설정 */
+  top: 30px; /* 부모 요소(main-rectangle) 상단에 배치 */
+  left: 50px;
+  right: 50px;
+}
+
+.group-actions button {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #C5A178;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.group-list {
+  text-align: center;
+}
+
+.group-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.group-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.group-list ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}

@@ -2,47 +2,17 @@
 
 
 .content-container {
-    margin: 200px;
+    margin: 20px;
     text-align: center; /* 내용을 가운데 정렬 */
   }
-  
-  .tab-bar {
-    width: 100%;
-    background-color: #f9e8b6;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .tab-group {
-    display: flex;
-  }
-  
-  .tab-item {
-    margin-right: 20px;
-    cursor: pointer;
-    font-size: 24px; /* Font size */
-    font-weight: bold; /* Make the font weight bold */
-  }
-  
-  .logout-button {
-    cursor: pointer;
-    font-size: 24px; /* Font size */
-    font-weight: bold; /* Make the font weight bold */
-  }
-  
-  .logout-link {
-    color: #000000;
-  }
-  
- 
+
   .centered-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 800px; /* 직사각형을 가운데 정렬할 컨테이너의 높이 */
-    margin-top: 30px;
+    margin-top: 150px;
   }
   
   .large-rectangle {
@@ -101,7 +71,7 @@
   
   .commit-summary {
     width: 500px;
-    height: 200px;
+    height: 100px;
     font-size: 16px;
     padding: 10px;
     border-radius: 8px;
@@ -135,7 +105,7 @@
     font-size: 20px;
     font-weight: bold;
     background-color: #C5A178;
-    color: white;
+    color: #000000;
     border: none;
     border-radius: 8px;
     cursor: pointer;

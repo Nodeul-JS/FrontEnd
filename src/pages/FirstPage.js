@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../cssfile/FirstPage.css'; // CSS 파일 import
+import TabBar from '../pages/TabBar.js'; // TabBar 컴포넌트 import
 
 const FirstPage = () => {
   const [commitSummary, setCommitSummary] = useState('');
@@ -17,16 +18,7 @@ const FirstPage = () => {
 
   return (
     <div className="container">
-      <div className="tab-bar">
-        <div className="tab-group">
-          <div className="tab-item">내 프로필</div>
-          <div className="tab-item">그룹</div>
-          <div className="tab-item">뱃지</div>
-        </div>
-        <div className="logout-button">
-          <a className="logout-link" href="/logout">로그아웃</a>
-        </div>
-      </div>
+      <TabBar /> {/* TabBar 컴포넌트 삽입 */}       
       <div className="content-container">
         <div className="centered-box">
           {/* 커밋 대기 중 텍스트 */}
@@ -53,8 +45,8 @@ const FirstPage = () => {
               <h1>오늘의 커밋 요약</h1>
               <textarea
                 className="commit-summary"
-                rows="3"
-                cols="30"
+                rows="2"
+                cols="15"
                 value={commitSummary}
                 onChange={handleCommitSummaryChange}
                 placeholder="커밋 내용을 입력하세요..."
