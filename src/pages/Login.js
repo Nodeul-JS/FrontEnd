@@ -7,15 +7,15 @@ const GITHUB_REDIRECT_URI = 'http://localhost:3000/callback';
 
 const  Login=()=> {
  const navigate = useNavigate();
- const FirstPage = () => {
-    navigate("/FirstPage");
+ const MyProfile = () => {
+    navigate("/MyProfile");
   }
   const handleLogin = () => {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URI}`;
   };
   
   return (
-    <div className="container">
+    <div className="container2">
       <div className="tab-bar">
         TABBAR
       </div>
@@ -25,7 +25,7 @@ const  Login=()=> {
           <button className="login-button" onClick={handleLogin}>
             GitHub로 로그인하기
           </button>
-          <button className="login-button" onClick={FirstPage}>
+          <button className="login-button" onClick={MyProfile}>
             메인화면
           </button>
           

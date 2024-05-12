@@ -1,12 +1,10 @@
-/* FirstPage.css */
 
-
-.content-container {
+.content-container1 {
     margin: 20px;
     text-align: center; /* 내용을 가운데 정렬 */
   }
 
-  .centered-box {
+  .centered-box1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -15,14 +13,14 @@
     margin-top: 150px;
   }
   
-  .large-rectangle {
+  .large-rectangle1 {
     border: 30px solid #C5A178; /* 테두리 스타일, 두께, 색상 설정 */
     width: 558px;
     height: 682px;
     background-color: #FFF6EC; /* 직사각형 배경색 */
     border-radius: 20px; /* 모서리를 10px만큼 둥글게 설정 */
   }
-  .commit-status {
+  .commit-status1 {
     background-color: #C5A178;
     padding-top: 10px;
     border-top-left-radius: 8px;
@@ -31,86 +29,33 @@
     font-size: 30px; /* Increase font size to 24 pixels */
     font-weight: bold; /* Make the font weight bold */
   }
-  .profile-image {
+  .profile-image1 {
     width: 300px;
     height: 300px;
     /* 다른 스타일 속성들 */
   }
-  .current-experience {
+  .current-experience1 {
     width: 25%; /* 현재 경험치의 너비 (전체 경험치 200 중 50의 25%) */
     height: 100%;
     background-color: #4caf50; /* 초록색 배경색 */
   }
   
   
-  .experience-bar {
+  .experience-bar1 {
     width: 200px; /* 경험치 바의 전체 길이 */
     height: 20px; /* 경험치 바의 높이 */
     background-color: #cccccc; /* 회색 배경색 */
     border-radius: 10px; /* 둥근 모서리 */
     overflow: hidden; /* 내부 요소의 넘침 처리 */
   }
-  .experience-bar-container {
+  .experience-bar-container1 {
     display: flex;
     justify-content: center; /* 가로 중앙 정렬 */
     margin-top: 20px; /* 경험치 바와 위쪽 요소 간의 간격 조절 */
   }
-  .github-link a,
-.blog-link a {
+  .github-link1 a,
+.blog-link1 a {
     font-size: 30px; /* Font size */
     font-weight: bold; /* Make the font weight bold */
 }
 
-/* 커밋 요약 입력 */
-.commit-summary-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-  
-  .commit-summary {
-    width: 500px;
-    height: 100px;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  .textarea-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .summary-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .commitcomment {
-    width: 500px;
-    height: 200px;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  .record-button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #C5A178;
-    color: #000000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .record-button:hover {
-    background-color: #9B7B51;
-  }

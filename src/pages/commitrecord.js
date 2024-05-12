@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../cssfile/FirstPage.css'; // CSS 파일 import
-import TabBar from '../pages/TabBar.js'; // TabBar 컴포넌트 import
+import '../cssfile/commitrecord.css'; // CSS 파일 import
+import TabBar from './TabBar.js'; // TabBar 컴포넌트 import
 
-const FirstPage = () => {
+const CommitRecord = () => {
   const [commitSummary, setCommitSummary] = useState('');
   const experienceRatio = 25; // 현재 경험치 비율 (예시: 25%)
 
@@ -62,4 +62,4 @@ const FirstPage = () => {
   );
 };
 
-export default FirstPage;
+export default CommitRecord;

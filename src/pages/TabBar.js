@@ -17,11 +17,14 @@ const TabBar = () => {
     const GroupMain = () => {
       navigate("/GroupMain");
     }
+    const MyProfile = () => {
+      navigate("/MyProfile");
+    }
 
   return (
     <div className="tab-bar">
       <div className="tab-group">
-        <div className="tab-item">내 프로필</div>
+        <div className="tab-item"onClick={MyProfile}>내 프로필</div>
         <div className="tab-item" onClick={GroupMain}>그룹</div>
         <div className="tab-item" onClick={openModal}>뱃지</div>
       </div>
