@@ -1,0 +1,95 @@
+/* Styling for the modal overlay */
+.modal-group-add {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  }
+  
+  /* Styling for the modal content */
+  .modal-content-group-add {
+    width:600px;  
+    height:300px;
+    padding: 40px;
+    text-align: center;
+    border: 30px solid #C5A178;
+    border-radius: 20px;
+    background-color: #FFF6EC;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  }
+  
+  /* Styling for the modal header */
+  .modal-header-group-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  /* Styling for the modal title */
+  .modal-title-group-add {
+    font-size: 24px;
+    font-weight: bold;
+   
+  }
+  
+  /* Styling for the modal close button */
+  .modal-close-group-add {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .modal-content-group-add label {
+    font-size: 20px; /* Adjust the font size as needed */
+    font-weight: bold;
+    display: inline-block; /* Display labels inline */
+    width: 160px; /* Set fixed width for labels */
+    text-align: right; /* Align labels to the right for proper spacing */
+    margin-right: 20px; /* Add margin to separate labels from inputs */
+  }
+  
+
+  .modal-content-group-add input {
+    width: calc(100% - 200px); /* Calculate input width to fill remaining space */
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for validation messages */
+  .username-validation p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Styling for modal footer (buttons) */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Styling for modal buttons */
+  .modal-button {
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #C5A178;
+    color: #000000; /* Set text color to black */
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .modal-body-group-add{
+    margin-bottom: 40px;
+  }

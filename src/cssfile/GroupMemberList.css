@@ -1,0 +1,19 @@
+/* GroupMemberList.css */
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+    gap: 20px; /* 그리드 간격 설정 */
+  }
+  
+  .member-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .member-item img {
+    width: 100px; /* 이미지 크기 조절 */
+    height: 100px;
+  }

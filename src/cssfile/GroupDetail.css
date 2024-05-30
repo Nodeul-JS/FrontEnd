@@ -1,0 +1,79 @@
+
+.group-detail-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the start (top) of the container */
+
+}
+
+.group-my-profile,
+.group-member {
+  flex: 1; /* Each section takes equal space */
+  }
+.group-member-detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 800px; /* 직사각형을 가운데 정렬할 컨테이너의 높이 */
+  margin-top: 150px;
+}
+.group-name-detail {
+  background-color: #C5A178;
+  padding-top: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 150px;
+  font-size: 30px; /* Increase font size to 24 pixels */
+  font-weight: bold; /* Make the font weight bold */
+  text-align: center;
+  margin-left: 600px;
+}
+
+.group-detail-group-memberbox {
+  border: 30px solid #C5A178;
+  width: 800px;
+  height: 682px;
+  background-color: #FFF6EC;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start; /* Align elements at the top */
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px; /* Add padding at the top */
+}
+.group-detail-header1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-member-button {
+  background-color: #C5A178;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 30px; /* Increase margin at the bottom */
+  align-self: flex-start; /* Align button to the start (top) of the container */
+}
+
+.member-count {
+  background-color: #C5A178;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  width: 150px;
+  border-radius: 5px;
+  margin-bottom: 30px; 
+  padding: 10px 20px;
+  margin-right: 50px;
+  align-self: flex-start; /* Align count to the start (top) of the container */
+    /* Center text horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
