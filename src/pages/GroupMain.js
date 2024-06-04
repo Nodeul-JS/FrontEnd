@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TabBar from '../pages/TabBar';
+import TabBar from '../Components/TabBar';
 import '../cssfile/Groupmain.css';
 import '../cssfile/groupmodal.css';
 

@@ -1,8 +1,8 @@
 // MemberDetail.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import TabBar from '../pages/TabBar';
-import Myprofilecap from '../pages/Myprofilecap'; // Myprofilecap 컴포넌트 import
+import TabBar from './TabBar';
+import Myprofilecap from './Myprofilecap'; // Myprofilecap 컴포넌트 import
 
 const MemberDetail = () => {
   const { id } = useParams(); // 멤버 ID 파라미터 가져오기

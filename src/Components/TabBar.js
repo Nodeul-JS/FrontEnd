@@ -6,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 const TabBar = () => {
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const handleMyProfileClick = () => {
+      const githubId = localStorage.getItem('githubId');
+      navigate(`/MyProfile/Yukyung98?token=${githubId}`);
+    };
+    const handleLogoutClick = () => {
+      localStorage.removeItem('githubId');
+      navigate('/');
+    };
     const openModal = () => {
       setIsModalOpen(true);
     };
@@ -17,19 +24,17 @@ const TabBar = () => {
     const GroupMain = () => {
       navigate("/GroupMain");
     }
-    const MyProfile = () => {
-      navigate("/MyProfile");
-    }
+    
 
   return (
     <div className="tab-bar">
       <div className="tab-group">
-        <div className="tab-item"onClick={MyProfile}>내 프로필</div>
+        <div className="tab-item"onClick={handleMyProfileClick}>내 프로필</div>
         <div className="tab-item" onClick={GroupMain}>그룹</div>
         <div className="tab-item" onClick={openModal}>뱃지</div>
       </div>
       <div className="logout-button">
-        <a className="logout-link" href="/logout">로그아웃</a>
+        <a className="logout-link" onClick={handleLogoutClick}>로그아웃</a>
       </div>
 
      {/* 모달 */}

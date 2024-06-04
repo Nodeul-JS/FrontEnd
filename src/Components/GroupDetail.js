@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import TabBar from '../pages/TabBar';
-import Myprofilecap from '../pages/Myprofilecap';
+import TabBar from './TabBar';
+import Myprofilecap from './Myprofilecap';
 import GroupMemberList from './GroupMemberList';
 import '../cssfile/GroupDetail.css';
 import '../cssfile/groupadd.css';

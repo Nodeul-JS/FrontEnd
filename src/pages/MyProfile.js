@@ -1,6 +1,6 @@
 import React from 'react';
-import TabBar from '../pages/TabBar';
-import Myprofilecap from '../pages/Myprofilecap';
+import TabBar from '../Components/TabBar';
+import Myprofilecap from '../Components/Myprofilecap';
 
 const MyPorfile = () => {
 

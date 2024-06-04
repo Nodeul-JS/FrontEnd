@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../cssfile/commitrecord.css'; // CSS 파일 import
-import TabBar from './TabBar.js'; // TabBar 컴포넌트 import
+import TabBar from '../Components/TabBar.js'; // TabBar 컴포넌트 import
 
 const CommitRecord = () => {
   const [commitSummary, setCommitSummary] = useState('');
