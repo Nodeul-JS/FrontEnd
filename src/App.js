@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Login } from './pages/Login'; // Login 및 Callback 컴포넌트 가져오기
-
 import Commitrecord from './pages/commitrecord';
 import GroupMain from './pages/GroupMain';
 import MyProfile from './pages/MyProfile'; // MyProfilecap 컴포넌트 가져오기

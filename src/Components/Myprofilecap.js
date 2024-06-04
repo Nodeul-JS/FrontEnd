@@ -18,13 +18,14 @@ const MyProfilecap = () => {
       try {
         // localStorage.setItem('githubId', githubId);
         const response = await axios.get(`http://43.202.195.98:8080/api/commit/commitStatus/${githubId}`, { mode: 'cors' });
-        if (response.data === "commitNotYet") {
+        console.log(response)
+        if (response.data.data === "commitNotYet") {
           setStatus('커밋 대기 중');
           setHasCommit(true);
-        } else if (response.data === "AINotYet") {
+        } else if (response.data.data  === "AINotYet") {
           setStatus('AI 커밋 대기 중');
           setHasCommit(false);
-        } else if (response.data === "commitDone") {
+        } else if (response.data.data  === "commitDone") {
           setStatus('오늘의 커밋 완료');
           setHasCommit(false);
         }
