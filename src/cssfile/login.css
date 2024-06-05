@@ -10,14 +10,15 @@
 
 .hello-world {
   color: #ff6b6b; /* Adjust color as needed */
-  font-size: 2em;
-  margin-bottom: 0;
+  font-size: 3em; /* Increased from 2em */
+  margin-bottom: 0.5em; /* Adjusted for better spacing */
 }
 
 .welcome-text {
   color: #ff9f43; /* Adjust color as needed */
+  font-size: 1.5em; /* Added for size increase */
   margin-top: 0;
-  margin-bottom: 2em;
+  margin-bottom: 3em; /* Increased for better spacing */
 }
 
 .github-login {
@@ -27,29 +28,30 @@
 }
 
 .github-icon {
-  font-size: 5em;
+  font-size: 7.5em; /* Increased from 5em */
 }
 
 .continue-with {
-  margin: 1em 0;
+  margin: 1.5em 0; /* Increased for better spacing */
   color: #aaa;
+  font-size: 1.2em; /* Added for size increase */
 }
 
 .github-button {
   background-color: #000;
   color: #fff;
   border: none;
-  padding: 0.5em 2em;
-  font-size: 1em;
+  padding: 0.75em 3em; /* Increased from 0.5em 2em */
+  font-size: 1.5em; /* Increased from 1em */
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 1em;
+  margin-top: 1.5em; /* Increased for better spacing */
 }
 
 .terms-text {
   color: #aaa;
-  font-size: 0.9em;
-  margin-top: 2em;
+  font-size: 1.35em; /* Increased from 0.9em */
+  margin-top: 3em; /* Increased for better spacing */
 }
 
 .terms-text a {

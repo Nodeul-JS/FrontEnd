@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import TabBar from './TabBar';
@@ -16,6 +16,7 @@ const GroupDetail = () => {
   const [teamName, setTeamName] = useState('');
   const [description, setDescription] = useState('');
   const [maxMembers, setMaxMembers] = useState(0);
+  const modalRef = useRef(null);
 
   useEffect(() => {
     // Save githubId to localStorage
@@ -54,15 +55,43 @@ const GroupDetail = () => {
     setUsernameExists(false);
   };
 
-  const handleInvite = () => {
-    // usernameExists logic to be implemented here
-    const newMember = { username: inviteUsername, id: Math.random().toString() };
-    setGroupMembers([...groupMembers, newMember]); // Add the new member to the list
+  const handleInvite = async () => {
+    try {
+      const response = await axios.post('http://43.202.195.98:8080/api/teams/invitation', {
+        teamId: groupId,
+        githubId: inviteUsername
+      });
 
-    setInviteUsername('');
-    setUsernameExists(false);
-    setShowModal(false);
+      // 만약 백엔드에서 존재하는 사용자를 추가할 수 있다는 신호를 보낸다면, 추가
+      if (response.data.canAdd) {
+        const newMember = { username: inviteUsername, id: Math.random().toString() };
+        setGroupMembers([...groupMembers, newMember]);
+        setInviteUsername('');
+        setUsernameExists(false);
+        setShowModal(false);
+      } else {
+        setUsernameExists(true);
+      }
+    } catch (error) {
+      console.error('Error inviting member:', error);
+    }
   };
+
+  const handleModalOutsideClick = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      setShowModal(false);
+      setInviteUsername('');
+      setUsernameExists(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleModalOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleModalOutsideClick);
+    };
+  }, []);
 
   return (
     <div className="group-detail-container">
@@ -78,12 +107,11 @@ const GroupDetail = () => {
             <div className='group-info'>
               <div className="group-Page">GroupPage</div>
               <div className='group-info-title'>{teamName}</div>
-              
             </div>
             <div className='group-member-number'>
                 {groupMembers.length} / {maxMembers}
             </div>
-            <div className='group-invaite'>
+            <div className='group-invite'>
               <button className="add-member-button" onClick={toggleModal}>
               Invite
                   </button>
@@ -97,7 +125,7 @@ const GroupDetail = () => {
         </div>
       </div>
       {showModal && (
-        <div className="modal-group-add">
+        <div className="modal-group-add" ref={modalRef}>
           <div className="modal-content-group-add">
             <div className="modal-header-group-add">
               <div className="modal-title-group-add">invite Member</div>

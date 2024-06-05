@@ -14,8 +14,8 @@ const GroupMemberList = ({ groupMembers }) => {
         {groupMembers.map((member) => (
           <div className="member-item" key={member.githubId}>
             <img src={getMemberImage(member.level)} alt={`Level ${member.level}`} />
-            <p>{member.githubId}</p>
-            <Link to={`/member/${member.githubId}`}>Profile</Link>
+            <p></p>
+            <Link className='member-name' to={`/commitCheck/${member.githubId}`}>{member.githubId}</Link>
           </div>
         ))}
       </div>

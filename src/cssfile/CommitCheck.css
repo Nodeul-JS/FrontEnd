@@ -1,0 +1,132 @@
+.commit-container {
+  font-family: Arial, sans-serif;
+}
+
+.commit-main {
+  padding: 20px;
+}
+
+.commit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.commit-Diary {
+  margin-left: 20px;
+  flex: 1;
+}
+.commit-Diary h1{
+  color: #F19143;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+.commit-Diary p{
+  color: grey;
+  font-size: 30px;
+  font-weight: bold;
+
+  margin: 5px 0 0 0;
+}
+
+.commit-Diary-userinfo {
+  display: flex;
+  align-items: center;
+}
+
+.commit-image1 {
+  width: 250px;
+  height: 250px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.user-details {
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-nickname1{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.current-experience1 {
+  width: 100%;
+  height: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.current-experience1 div {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.github-link1 {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.github-link1:hover {
+  text-decoration: underline;
+}
+
+.commit-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commit-body-child {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.commit-history,
+.commit-gpt-reperence {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.commit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.commit-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.commit-item a:hover {
+  text-decoration: underline;
+}
+
+.commit-date {
+  margin-left: 10px;
+  color: #555;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.feedback-buttons button {
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

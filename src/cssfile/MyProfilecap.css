@@ -42,7 +42,7 @@
     border-radius: 5px;
   }
   .commit-status1 {
-    background-color: green;
+    background-color: rgb(67, 196, 67);
     color: white;
     /* Add any additional styling properties as needed */
     font-size: 25px; /* Set the font size to approximately 25px */

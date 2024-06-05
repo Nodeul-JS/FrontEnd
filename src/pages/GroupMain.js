@@ -92,7 +92,7 @@ const GroupMain = () => {
           <ul>
             {groups.map((group) => (
               <li key={group.id} onClick={() => handleGroupClick(group.teamId)}>
-                <img src={group.icon || randomGroupIcon} alt="Group Icon" className="group-icon" />
+                <img src={group.icon || getRandomGroupIcon()} alt="Group Icon" className="group-icon" />
                 <div className="group-details">
                   <p className="group-name">{group.teamName}</p>
                   <p className="group-decre">{group.description}</p>

@@ -19,7 +19,7 @@
   width: 50%; /* Each section will take 50% of the tab-group width */
 }
 .web-name { 
-  font-size: 25px; /* Increase font size */
+  font-size: 40px; /* Increase font size */
   font-weight: bold; /* Make text bold */
   color: #ffcc00; /* Change text color to a more visible yellow */
 }

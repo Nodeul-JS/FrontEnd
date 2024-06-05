@@ -9,10 +9,13 @@
 .sec1-ch {
   display: inline-block;
   width: 800px; /* Set the width of the element to 100 pixels */
+  margin-left: 60px;
 }
-
+.paragraph1{
+  margin-top: 200px;
+}
 .paragraph1 p {
-  color: rgba(134, 134, 42, 0.726); /* Set text color to yellow */
+  color: #f19143; /* Set text color to yellow */
   font-size: 50px; /* Set font size to 24 pixels */
 }
 .paragraph2 p {
@@ -20,7 +23,9 @@
   font-size: 30px; /* Set font size to 24 pixels */
 }
 .paragraph3 h2 {
-  color: rgba(134, 134, 42, 0.726); /* Set h3 text color to yellow */
+  color: #FF773D; /* Set h3 text color to yellow */
+  font-size: 100px;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .paragraph3 p {
