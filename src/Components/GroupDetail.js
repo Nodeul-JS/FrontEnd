@@ -14,7 +14,6 @@ const GroupDetail = () => {
   const [usernameExists, setUsernameExists] = useState(false);
   const [groupMembers, setGroupMembers] = useState([]);
   const [teamName, setTeamName] = useState('');
-  const [description, setDescription] = useState('');
   const [maxMembers, setMaxMembers] = useState(0);
   const modalRef = useRef(null);
 
@@ -39,7 +38,6 @@ const GroupDetail = () => {
         if (currentGroup) {
           setTeamName(currentGroup.teamName);
           setMaxMembers(currentGroup.maxMembers);
-          setDescription(currentGroup.description);
         }
       } catch (error) {
         console.error('Error fetching group details:', error);
@@ -86,12 +84,16 @@ const GroupDetail = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleModalOutsideClick);
+    if (showModal) {
+      document.addEventListener('mousedown', handleModalOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleModalOutsideClick);
+    }
 
     return () => {
       document.removeEventListener('mousedown', handleModalOutsideClick);
     };
-  }, []);
+  }, [showModal]);
 
   return (
     <div className="group-detail-container">
@@ -125,8 +127,9 @@ const GroupDetail = () => {
         </div>
       </div>
       {showModal && (
-        <div className="modal-group-add" ref={modalRef}>
-          <div className="modal-content-group-add">
+        <div className="modal-group-add">
+          <div className="modal-overlay"></div>
+          <div className="modal-content-group-add" ref={modalRef}>
             <div className="modal-header-group-add">
               <div className="modal-title-group-add">invite Member</div>
               <div className="modal-close-group-add" onClick={toggleModal}>
