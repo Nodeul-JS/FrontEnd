@@ -8,15 +8,14 @@ import GroupDetail from './Components/GroupDetail';
 import MemberDetail from './Components/MemberDetail'; // 멤버 상세 페이지 컴포넌트 import
 
 const App = () => {
-  const [groups, setGroups] = useState([]);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/commitrecord" element={<Commitrecord />} />
-        <Route path="/GroupMain" element={<GroupMain groups={groups} setGroups={setGroups} />} />
-        <Route path="/GroupMain/:groupId" element={<GroupDetail groups={groups} />} />
+        <Route path="/GroupMain/:githubId" element={<GroupMain />} />
+        <Route path="/GroupDetail/:groupId/:githubId" element={<GroupDetail />} />
         <Route path="/MyProfile/:githubId" element={<MyProfile />} /> {/* GitHub ID를 받도록 수정 */}
         <Route path="/member/:id" element={<MemberDetail />} />
       </Routes>

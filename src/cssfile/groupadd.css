@@ -17,9 +17,8 @@
     height:300px;
     padding: 40px;
     text-align: center;
-    border: 30px solid #C5A178;
     border-radius: 20px;
-    background-color: #FFF6EC;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
   }
@@ -85,11 +84,15 @@
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    background-color: #C5A178;
+    background-color: #ffcc00;
     color: #000000; /* Set text color to black */
     cursor: pointer;
     margin-left: 10px;
   }
+  .modal-button:hover  {
+    background-color: #ffd700;
+  }
   .modal-body-group-add{
     margin-bottom: 40px;
+    margin-right: 50px;
   }

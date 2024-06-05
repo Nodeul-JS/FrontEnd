@@ -1,31 +1,64 @@
 .tab-bar {
-    width: 100%;
-    background-color: #f9e8b6;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .tab-group {
-    display: flex;
-  }
-  
-  .tab-item {
-    margin: 0 40px; /* 좌우 여백을 동일하게 40px로 설정 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
 
-    cursor: pointer;
-    font-size: 30px; /* Font size */
-    font-weight: bold; /* Make the font weight bold */
-  }
+.tab-group {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Each section will take 100% of the tab-group width */
+}
+
+.tab-sec-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items evenly within each section */
+  width: 50%; /* Each section will take 50% of the tab-group width */
+}
+.web-name { 
+  font-size: 25px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+  color: #ffcc00; /* Change text color to a more visible yellow */
+}
+
+.tab-sec-2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right within tab-sec-2 */
+  width: 30%; /* Each section will take 30% of the tab-group width */
+  margin-left: auto; /* Move the section to the right */
+}
+
+.tab-item {
+  cursor: pointer;
+  color: black;
+  padding: 10px 20px;
+  font-size: 25px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+
+
+
+.logout-button {
+  display: flex;
+  align-items: center;
   
-  .logout-button {
-    cursor: pointer;
-    font-size: 30px; /* Font size */
-    font-weight: bold; /* Make the font weight bold */
-    margin-right: 30px;
-  }
-  
-  .logout-link {
-    color: #000000;
-  }
-  
+}
+
+.logout-btn {
+  background-color: #ffcc00; /* Change background color to a more visible yellow */
+  color: black; /* Change text color to black */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 25px; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+
+.logout-btn:hover {
+  background-color: #ffd700;
+}

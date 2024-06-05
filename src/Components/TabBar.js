@@ -22,20 +22,31 @@ const TabBar = () => {
       setIsModalOpen(false);
     };
     const GroupMain = () => {
-      navigate("/GroupMain");
-    }
+      const githubId = localStorage.getItem('githubId'); // Assuming userId is stored in localStorage
+      if (githubId) {
+          navigate(`/GroupMain/${githubId}`);
+      } else {
+          console.error('User ID not found in localStorage');
+      }
+  };
     
 
   return (
     <div className="tab-bar">
       <div className="tab-group">
-        <div className="tab-item"onClick={handleMyProfileClick}>내 프로필</div>
-        <div className="tab-item" onClick={GroupMain}>그룹</div>
-        <div className="tab-item" onClick={openModal}>뱃지</div>
+        <div className = "tab-sec-1">
+          <div className="web-name">Commit Farm</div>
+        </div>
+        <div className='tab-sec-2'>
+          <div className="tab-item" onClick={GroupMain}>Group</div>
+          <div className="tab-item" onClick={openModal}>Badge</div>
+          <div className="tab-item" onClick={handleMyProfileClick}>MyPage</div>
+          <div className="logout-button">
+            <button className="logout-btn" onClick={handleLogoutClick}>Logout</button>
+          </div>
+        </div>
       </div>
-      <div className="logout-button">
-        <a className="logout-link" onClick={handleLogoutClick}>로그아웃</a>
-      </div>
+      
 
      {/* 모달 */}
      {isModalOpen && (

@@ -1,0 +1,54 @@
+
+.content-container1 {
+    margin: 20px;
+    text-align: center; /* 내용을 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center align vertically */
+    margin: 20px;
+  }
+
+  .profile-image1 {
+    width: 550px; /* Set the width of the profile image */
+    height: 550px; /* Set the height of the profile image */
+    border-radius: 50%; /* Make the profile image round */
+    margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+  }
+  .current-experience1 {
+    width: 25%; /* 현재 경험치의 너비 (전체 경험치 200 중 50의 25%) */
+    height: 100%;
+    background-color: #4caf50; /* 초록색 배경색 */
+  }
+  
+  .experience-bar1 {
+    width: 200px; /* 경험치 바의 전체 길이 */
+    height: 20px; /* 경험치 바의 높이 */
+    background-color: #cccccc; /* 회색 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    overflow: hidden; /* 내부 요소의 넘침 처리 */
+  }
+  .experience-bar-container1 {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    margin-top: 20px; /* 경험치 바와 위쪽 요소 간의 간격 조절 */
+  }
+  .github-link1 {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+    font-size: 25px; /* Set the font size to approximately 25px */
+    padding: 10px 10px; /* Add some padding for better appearance */
+    width: 300px; /* Set the width to 80% of its container */
+    margin: 20px auto; /* Center the element horizontally and add space above and below */
+    border-radius: 5px;
+  }
+  .commit-status1 {
+    background-color: green;
+    color: white;
+    /* Add any additional styling properties as needed */
+    font-size: 25px; /* Set the font size to approximately 25px */
+    padding: 10px 10px; /* Add some padding for better appearance */
+    width: 300px; /* Set the width to 80% of its container */
+    margin: 20px auto; /* Center the element horizontally and add space above and below */
+    border-radius: 5px;
+  }
+

@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import TabBar from '../Components/TabBar';
 import '../cssfile/Groupmain.css';
 import '../cssfile/groupmodal.css';
 
-const GroupMain = ({ groups, setGroups }) => {
+const GroupMain = () => {
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [groupName, setGroupName] = useState('');
+  const [maxMembers, setMaxMembers] = useState('');
+  const [description, setDescription] = useState('');
+  const [groups, setGroups] = useState([]);
+  const [randomGroupIcon, setRandomGroupIcon] = useState('');
+
+  const githubId = localStorage.getItem('githubId');
+
   const getRandomGroupIcon = () => {
     const images = [
       '/images/groupicon1.png',
@@ -14,78 +25,77 @@ const GroupMain = ({ groups, setGroups }) => {
     const randomIndex = Math.floor(Math.random() * images.length);
     return images[randomIndex];
   };
-  const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [groupName, setGroupName] = useState('');
-  const [maxMembers, setMaxMembers] = useState('');
-  const [groupDuration, setGroupDuration] = useState('');
-  const [randomGroupIcon, setRandomGroupIcon] = useState(getRandomGroupIcon());
 
-  //그룹 새로 고침시 그룹이 사라지는 것을 방지
   useEffect(() => {
-    // 세션 스토리지에서 그룹 정보 가져오기
-    const storedGroups = sessionStorage.getItem('groups');
-    if (storedGroups) {
-      setGroups(JSON.parse(storedGroups));
+    const fetchGroups = async () => {
+      try {
+        const response = await axios.get(`http://43.202.195.98:8080/api/teams/myTeamList/${githubId}`);
+        setGroups(response.data.data); // Assuming the groups data is in response.data.data
+      } catch (error) {
+        console.error('Error fetching group data:', error);
+      }
+    };
+
+    fetchGroups();
+    setRandomGroupIcon(getRandomGroupIcon()); // Only set once on component mount
+  }, [githubId]);
+
+  const handleGroupClick = (teamId) => { //team name으로 넘기도록 수정해야함.
+    //githubId도 넘어가게 수정해야함
+    navigate(`/GroupDetail/${teamId}/${githubId}`);
+  };
+
+  const handleCreateGroup = async () => {
+    const newGroup = {
+      teamName: groupName,
+      description: description,
+      githubId: githubId, // githubId는 이미 string 형태로 저장되어 있으므로 parseInt 필요 없음
+      maxMember: parseInt(maxMembers, 10)
+    };
+
+    try {
+      const response = await axios.post(`http://43.202.195.98:8080/api/teams`, newGroup);
+      setGroups((prevGroups) => [...prevGroups, response.data.data]);
+      closeModal();
+    } catch (error) {
+      console.error('Error creating group:', error);
     }
-  }, []); // 컴포넌트 마운트 시 한 번만 실행
+  };
+
   const openModal = () => {
     setIsModalOpen(true);
-    setRandomGroupIcon(getRandomGroupIcon());
+    setRandomGroupIcon(getRandomGroupIcon()); // Set when modal opens
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setGroupName('');
-    setMaxMembers('');
-    setGroupDuration('');
-  };
-
-  const handleCreateGroup = () => {
-    const newGroup = {
-      id: groupName.toLowerCase().replace(/\s/g, '_'),
-      name: groupName,
-      duration: groupDuration,
-      maxMembers: maxMembers,
-      icon: randomGroupIcon
-    };
-
-    const updatedGroups = [...groups, newGroup];
-    setGroups(updatedGroups);
-    sessionStorage.setItem('groups', JSON.stringify(updatedGroups)); // 세션 스토리지에 저장
-    closeModal();
   };
 
   const handleMaxMembersChange = (e) => {
-    const value = e.target.value;
-    if (parseInt(value) < 0) {
-      setMaxMembers('0');
-    } else {
-      setMaxMembers(value);
-    }
+    setMaxMembers(e.target.value);
   };
-
-  const handleGroupClick = (groupName) => {
-    navigate(`/GroupMain/${groupName}`);
-  };
-  
 
   return (
     <div className="group-page-container">
       <TabBar />
       <div className="main-rectangle">
         <div className="group-actions">
-          <button onClick={() => console.log('Leave Group')}>그룹 탈퇴</button>
-          <button onClick={() => console.log('View My Groups')}>내 그룹</button>
-          <button onClick={openModal}>그룹 생성</button>
+          <div className='group-title'>
+            <h2>Group Page</h2>
+            <p>함께 성장해나가는 그룹 페이지</p>
+          </div>
+          <div className='group-create-button'>
+            <button onClick={openModal}>Group Create</button>
+          </div>
         </div>
         <div className="group-list">
           <ul>
-            {groups.map((group, index) => (
-              <li key={group.id} onClick={() => handleGroupClick(group.name)}>
-                <img src={group.icon} alt="Group Icon" className="group-icon" />
+            {groups.map((group) => (
+              <li key={group.id} onClick={() => handleGroupClick(group.teamId)}>
+                <img src={group.icon || randomGroupIcon} alt="Group Icon" className="group-icon" />
                 <div className="group-details">
-                  <p className="group-name">{group.name}</p>
+                  <p className="group-name">{group.teamName}</p>
+                  <p className="group-decre">{group.description}</p>
                 </div>
               </li>
             ))}
@@ -118,11 +128,11 @@ const GroupMain = ({ groups, setGroups }) => {
                 />
               </div>
               <div className="group-page-input-container">
-                <label>운영 기간:</label>
+                <label>그룹 설명:</label>
                 <input
                   type="text"
-                  value={groupDuration}
-                  onChange={(e) => setGroupDuration(e.target.value)}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
               <button onClick={handleCreateGroup}>Create</button>

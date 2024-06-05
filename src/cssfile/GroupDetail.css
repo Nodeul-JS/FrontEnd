@@ -1,87 +1,54 @@
-
-
 .group-detail-cat {
   display: flex;
-  justify-content: center; /* Center align the contents horizontally */
-  align-items: flex-start; /* Align items at the top */
-  width: 100%; /* Align items at the start (top) of the container */
-
+  flex-direction: row; 
+  justify-content: center; /* 수평 가운데 정렬 */
 }
-
-
-.group-my-profile {
- justify-content: center;
-}
-.group-member-detail {
-  margin: 20px;
-
-  height: 795px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.group-name-detail {
-  display: inline-block;
-  background-color: #C5A178;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  width: auto;
-  font-size: 30px; /* Increase font size to 24 pixels */
-  font-weight: bold; /* Make the font weight bold */
-  text-align: center;
-  margin-left: 400px;
-  white-space: nowrap; /* Prevents text from wrapping */
-  
-}
-
-.group-detail-group-memberbox {
-  border: 30px solid #C5A178;
+.group-member{
   width: 800px;
-  height: 800px;
-  background-color: #FFF6EC;
-  border-radius: 20px;
-  display: flex;
-  justify-content: flex-start; /* Align elements at the top */
-  align-items: center;
-  flex-direction: column;
-  padding-top: 20px; /* Add padding at the top */
 }
-.group-detail-header1 {
+.group-my-profile,
+.group-member {
+  border: 1px solid #ccc; /* 회색 윤곽선 추가 */
+  border-radius: 10px; /* 둥근 윤곽선을 위한 경계 반지름 설정 */
+  padding: 15px; /* 내용과 윤곽선 사이의 간격 조정 */
+  margin: 20px; /* 요소들 간의 간격 조정 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 음영 효과 추가 */
+}
+
+.group-info{
+  margin-bottom: 20px;
+
+}
+.group-tapbar {
+  margin-top: 100px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+}
+
+.group-Page {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffcc00;
+
+}
+
+.group-info-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.group-member-number{
+  font-size: 25px;
+  font-weight: bold;
 }
 .add-member-button {
-  background-color: #C5A178;
-  color: #000000;
-  font-size: 24px;
+  background-color: #ffcc00;
+  color: black;
+  font-size: 30px;
   font-weight: bold;
-  width: 200px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 30px; /* Increase margin at the bottom */
-  align-self: flex-start; /* Align button to the start (top) of the container */
+  
+  /* 필요에 따라 추가적인 스타일을 지정할 수 있습니다. */
 }
-
-.member-count {
-  background-color: #C5A178;
-  color: #000000;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-  width: 150px;
-  border-radius: 5px;
-  margin-bottom: 30px; 
-  padding: 10px 20px;
-  margin-right: 50px;
-  align-self: flex-start; /* Align count to the start (top) of the container */
-    /* Center text horizontally */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.add-member-button:hover  {
+  background-color: #ffd700;
 }
