@@ -1,0 +1,45 @@
+.badge-popup {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .badge-popup h2 {
+    text-align: center;
+  }
+  
+  .badge-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; /* Each badge item width */
+    margin: 20px; /* Margin between badge items */
+    text-align: center;
+  }
+  
+  .badge-item img {
+    transform: scale(1.5); /* 뱃지 이미지를 1.5배 키움 */
+
+  }
+  
+  .badge-popup button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

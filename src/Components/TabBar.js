@@ -12,7 +12,7 @@ const TabBar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleMyProfileClick = () => {
       const githubId = localStorage.getItem('githubId');
-      navigate(`/MyProfile/Yukyung98?token=${githubId}`);
+      navigate(`/MyProfile/${githubId}?token=${githubId}`);
     };
     const handleLogoutClick = () => {
       localStorage.removeItem('githubId');
