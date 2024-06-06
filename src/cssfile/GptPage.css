@@ -48,11 +48,13 @@
 }
 .gpt-feedback-textarea {
   width: 100%;
-  height: 150px;
+  height: 300px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: none;
+  font-size: 30px
+  ;
 }
 
 .GPT-my-profile {

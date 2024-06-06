@@ -8,7 +8,10 @@ import Myprofilecap from '../Components/Myprofilecap';
 const GptPage = () => {
   const { githubId } = useParams();
   const [feedback, setFeedback] = useState('');
+  const [title, setTitle] = useState('');
+  const [createdAt, setCreatedAt] = useState('');
   const [userInfo, setUserInfo] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -24,14 +27,17 @@ const GptPage = () => {
   }, [githubId]);
 
   const handleButtonClick = async () => {
+    setLoading(true);
     try {
-      const response = await axios.get(`http://43.202.195.98:8080/api/commit/todayCommit/${githubId}`);
-      console.log('Response data:', response.data);  // 응답 데이터를 콘솔에 출력
-      const { description } = response.data; // JSON 데이터 구조에서 description 추출
+      const response = await axios.post(`http://43.202.195.98:8080/api/commit/todayCommit/${githubId}`);
+      const { description, title, createdAt } = response.data;
       setFeedback(description);
-      console.log('Feedback set:', description);  // 피드백 데이터가 제대로 설정되었는지 확인
+      setTitle(title);
+      setCreatedAt(new Date(createdAt).toLocaleDateString());
     } catch (error) {
       console.error('Error fetching GPT feedback:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,11 +54,19 @@ const GptPage = () => {
             </div>
             <div className="gpt-feedback-container">
               <h2>GPT auto feedback</h2>
-              <textarea
-                value={feedback}
-                readOnly
-                className="gpt-feedback-textarea"
-              />
+              {loading ? (
+                <div className="loading-spinner">Loading...</div>
+              ) : (
+                <>
+                  <textarea
+                    value={feedback}
+                    readOnly
+                    className="gpt-feedback-textarea"
+                  />
+                  {title && <h3>한줄 요약 : {title}</h3>}
+                  {createdAt && <p>{createdAt}</p>}
+                </>
+              )}
             </div>
           </div>
         </div>

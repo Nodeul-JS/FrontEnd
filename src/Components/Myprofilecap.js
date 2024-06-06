@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { FaGithub } from 'react-icons/fa'; // GitHub 아이콘을 사용하기 위한 패키지
+
 import '../cssfile/MyProfilecap.css';
 
 const MyProfilecap = () => {
@@ -41,7 +43,8 @@ const MyProfilecap = () => {
         const { level, experience } = response.data.data;
         setLevel(level);
         setExperience(experience);
-        setExperienceRatio((experience % 100) / 100 * 100);
+
+        setExperienceRatio((experience / 10) * 100); // 최대 경험치 10으로 수정
       } catch (error) {
         console.error('Error fetching user profile:', error);
       }
@@ -93,16 +96,17 @@ const MyProfilecap = () => {
         <div className="user-details1">
           <h1 className="nickname1">{githubId}</h1>
 
-          <div className="experience-bar-container1">
-            <div className="experience-bar1">
-              <div className="current-experience1" style={{ width: `${experienceRatio}%` }}></div>
+          <div className="experience-bar-container2">
+            <div className="experience-bar2">
+              <div className="current-experience2" style={{ width: `${experienceRatio}%` }}></div>
             </div>
           </div>
 
-          <p className="github-link1" onClick={handleMyProfileClick}>Go to GitHub</p>
-
+          <a className="github-link2" href={`https://github.com/${githubId}`} target="_blank" rel="noopener noreferrer">
+            <FaGithub className="github-icon" /> https://github.com/{githubId}
+          </a>
           <div 
-            className="commit-status1" 
+            className="commit-status2" 
             style={{ backgroundColor: getStatusBackgroundColor(status), color: 'black', cursor: 'pointer' }} 
             onClick={handleCommitStatusClick}
           >

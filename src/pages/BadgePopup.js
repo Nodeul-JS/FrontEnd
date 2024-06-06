@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const BadgePopup = ({ onClose }) => {
-  // 뱃지 목록 데이터
-  const badges = ['뱃지1', '뱃지2', '뱃지3'];
+const BadgePopup = ({ githubId, onClose }) => {
+  const [badges, setBadges] = useState([]);
+
+  useEffect(() => {
+    const fetchBadges = async () => {
+      try {
+        const response = await axios.get(`http://43.202.195.98:8080/api/badge/${githubId}`);
+        console.log(githubId);
+        setBadges(response.data); // Assuming response.data contains the badge list
+      } catch (error) {
+        console.error('Error fetching badges:', error);
+      }
+    };
+
+    fetchBadges();
+  }, [githubId]);
 
   return (
     <div className="badge-popup">
-      <h2>내가 모은 뱃지</h2>
       <ul>
         {badges.map((badge, index) => (
           <li key={index}>{badge}</li>
         ))}
       </ul>
-      <button onClick={onClose}>닫기</button>
     </div>
   );
 };

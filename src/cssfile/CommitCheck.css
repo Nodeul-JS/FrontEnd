@@ -55,28 +55,38 @@
   margin-bottom: 10px;
 }
 
-.current-experience1 {
-  width: 100%;
-  height: 10px;
-  background-color: #f3f3f3;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.experience-bar1 {
+  width: 200px; /* 경험치 바의 전체 길이 */
+  height: 20px; /* 경험치 바의 높이 */
+  background-color: #cccccc; /* 회색 배경색 */
+  border-radius: 10px; /* 둥근 모서리 */
+  overflow: hidden; /* 내부 요소의 넘침 처리 */
+  margin-top: 10px;
+
 }
 
-.current-experience1 div {
+.current-experience1 {
   height: 100%;
-  background-color: #4caf50;
-  border-radius: 5px;
+  background-color: #4caf50; /* 초록색 배경색 */
 }
 
 .github-link1 {
-  color: #007bff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #000000;
   text-decoration: none;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .github-link1:hover {
   text-decoration: underline;
+}
+
+.github-icon {
+  margin-right: 5px;
+  font-size: 1.2em;
 }
 
 .commit-body {
@@ -95,6 +105,7 @@
   padding: 20px;
   border-radius: 4px;
   background-color: #f9f9f9;
+  font-size: 20px;
 }
 
 .commit-item {
@@ -102,25 +113,41 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+
 }
 
 .commit-item a {
-  color: #007bff;
+  color: #000000;
   text-decoration: none;
+  font-size: 28px;
+
 }
 
 .commit-item a:hover {
   text-decoration: underline;
 }
 
-.commit-date {
-  margin-left: 10px;
-  color: #555;
+.commit-number {
+  margin-right: 10px; /* 순번과 제목 사이의 간격 조절 */
+  font-size: 28px;
+
 }
 
+.commit-date {
+  margin-left: auto; /* 날짜를 오른쪽으로 정렬 */
+  padding-left: 10px; /* 제목과 날짜 사이의 간격 조절 */
+  font-size: 28px;
+}
+.commit-gpt-reperence p{
+  font-size: 25px;
+}
+.commit-gpt-reperence a{
+  font-size: 25px;
+}
 .feedback-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+
   margin-top: 10px;
 }
 
@@ -129,4 +156,14 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 10px;
+}
+
+.feedback-buttons .like-button,
+.feedback-buttons .dislike-button {
+  font-size: 90px; /* 버튼 크기를 키움 */
+}
+.feedback-buttons span {
+  font-size: 90px; /* 숫자 크기 */
+  margin: 0 10px;
 }
