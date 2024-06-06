@@ -1,59 +1,93 @@
 .modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  .modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 블러 효과를 위한 반투명 배경 */
-  }
-  
-  .modal-content {
-    position:absolute;
-    top:50%; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
 
-    width:600px;  
-    height:600px; 
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
 
-    padding:40px;  
+.modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: auto; /* 너비를 자동으로 조절 */
+  max-width: 90%; /* 최대 너비를 설정 */
+  z-index: 1001;
+  text-align: center;
+}
 
-    text-align: center;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-    background-color: rgb(255,255,255); 
-    border-radius:10px; 
-    box-shadow:0 2px 3px 0 rgba(34,36,38,0.15); 
+.modal-title {
+  font-size: 24px;
+}
 
-    transform:translateY(-50%); 
-  }
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .modal-title {
-    font-size: 24px;
-  }
-  
-  .modal-close {
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .badge-list {
-    text-align: left; /* 뱃지 목록을 왼쪽 정렬 */
-    padding-left: 20px; /* 왼쪽 여백 추가 */
-  }
+.modal-close {
+  cursor: pointer;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px; /* 각 뱃지 항목의 너비 */
+  margin: 10px; /* 뱃지 항목 간의 간격 */
+  text-align: center;
+}
+
+.badge-item img {
+  width: 300px; /* 뱃지 이미지를 적절한 크기로 설정 */
+  height: 300px;
+  margin-bottom: 10px; /* 이미지와 텍스트 간의 간격 */
+}
+
+.badge-item h3 {
+  font-size: 16px; /* 배지 이름의 글꼴 크기 */
+  margin: 0; /* 여백 제거 */
+}
+
+.badge-description {
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1002;
+}
+
+.badge-item:hover .badge-description {
+  display: block;
+}
