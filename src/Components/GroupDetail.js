@@ -147,7 +147,7 @@ const GroupDetail = () => {
               {inviteUsername && (
                 <div className="username-validation">
                   {usernameExists ? (
-                    <p className="exists">이미 존재하는 계정명입니다.</p>
+                    <p className="exists"> 초대가 완료됐습니다.</p>
                   ) : (
                     <p className="not-exists">존재하지 않는 계정명입니다.</p>
                   )}
