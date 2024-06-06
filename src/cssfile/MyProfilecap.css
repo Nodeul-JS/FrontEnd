@@ -16,8 +16,8 @@
   }
   .experience-bar-container2 {
     display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    margin-top: 20px; /* 경험치 바와 위쪽 요소 간의 간격 조절 */
+    justify-content: center; 
+    margin-top: 20px; 
   }
   
   .experience-bar2 {

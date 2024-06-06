@@ -1,7 +1,7 @@
 import React from 'react';
 import TabBar from '../Components/TabBar';
 import Myprofilecap from '../Components/Myprofilecap';
-import '../cssfile/Myprofile.css';
+import '../cssfile/MyProfile.css';
 
 const MyPorfile = () => {
   return (

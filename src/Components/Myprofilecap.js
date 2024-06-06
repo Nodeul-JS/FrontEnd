@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa'; // GitHub 아이콘을 사용하기 위한 패키지
-import '../cssfile/Myprofilecap.css';
+import '../cssfile/MyProfilecap.css';
 
 const MyProfilecap = () => {
   const navigate = useNavigate();
