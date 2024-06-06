@@ -12,6 +12,7 @@ const GptPage = () => {
   const [createdAt, setCreatedAt] = useState('');
   const [userInfo, setUserInfo] = useState({});
   const [loading, setLoading] = useState(false);
+  const [profileKey, setProfileKey] = useState(Date.now());
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -34,6 +35,8 @@ const GptPage = () => {
       setFeedback(description);
       setTitle(title);
       setCreatedAt(new Date(createdAt).toLocaleDateString());
+      // 새로 고침을 트리거하기 위해 profileKey를 업데이트합니다.
+      setProfileKey(Date.now());
     } catch (error) {
       console.error('Error fetching GPT feedback:', error);
     } finally {
@@ -73,7 +76,7 @@ const GptPage = () => {
         <div className='gpt-ch1'>
           <div className='gpt-2'>
               <div className='sec-1'>
-                <Myprofilecap />
+                <Myprofilecap key={profileKey} />
               </div>
           </div>
         </div>
