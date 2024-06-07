@@ -31,3 +31,10 @@
 .paragraph3 p {
   font-size: 25px; /* Set font size of p elements to 15 pixels */
 }
+.github-chart {
+  width: 800px; /* 이미지의 너비를 부모 요소에 맞춤 */
+  max-width: 800px; /* 최대 너비를 설정하여 조절 */
+  height: auto; /* 높이를 자동으로 조절하여 비율을 유지 */
+  margin: 20px auto; /* 상하 여백을 추가하고 가운데 정렬 */
+  display: block; /* 블록 요소로 설정하여 줄바꿈을 강제 */
+}

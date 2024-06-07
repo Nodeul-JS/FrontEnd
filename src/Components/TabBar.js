@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../cssfile/tabbar.css'; // CSS 파일 import
 import '../cssfile/modal.css'; // CSS 파일 import
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const TabBar = () => {
-  const githubId = localStorage.getItem('githubId'); // Assuming userId is stored in localStorage
+  let githubId = localStorage.getItem('githubId'); // Assuming userId is stored in localStorage
+
   const [badges, setBadges] = useState([]);
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(()=>{
+    githubId = localStorage.getItem('githubId');
+  },[]);
+  
   const handleMyProfileClick = () => {
     navigate(`/MyProfile/${githubId}?token=${githubId}`);
   };
@@ -77,15 +82,16 @@ const TabBar = () => {
             </div>
             {/* 뱃지 내용 */}
             <div className="badge-list">
-              {badges.map((badge) => (
-                <div key={badge.badgeId} className="badge-item">
-                  <img src={`/images/badge_${badge.badgeId}.png`} alt={badge.badgeName} className="badge-image" />
-                  <div className="badge-description">{badge.description}</div>
-                  <div>
-                    <h3>{badge.badgeName}</h3>
-                  </div>
-                </div>
-              ))}
+              <ul className="badge-list-ch">
+                {badges.map((badge) => (
+                  <li key={badge.badgeId} className="badge-item">
+                    <img src={`/images/badge_${badge.badgeId}.png`} alt={badge.badgeName} className="badge-image" />
+                    <div>
+                      <h3>{badge.badgeName}</h3>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

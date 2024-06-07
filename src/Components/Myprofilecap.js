@@ -53,10 +53,7 @@ const MyProfilecap = () => {
     fetchUserProfile();
   }, [githubId]);
 
-  const handleMyProfileClick = () => {
-    window.open(`https://github.com/${githubId}`);
-  };
-
+ 
   const handleCommitStatusClick = () => {
     if (status === '커밋 대기 중') {
       handleAICommitRecordClick();
@@ -111,13 +108,6 @@ const MyProfilecap = () => {
           >
             {status}
           </div>
-
-          {commitData && (
-            <div className="commit-data-container">
-              <h2>AI Commit Record</h2>
-              <p>{JSON.stringify(commitData)}</p>
-            </div>
-          )}
         </div>
       </div>
     </div>

@@ -3,13 +3,15 @@ import TabBar from '../Components/TabBar';
 import Myprofilecap from '../Components/Myprofilecap';
 import '../cssfile/MyProfile.css';
 
-const MyPorfile = () => {
+const MyProfile = () => {
+  const githubId = localStorage.getItem('githubId'); // LocalStorage에서 GitHub ID 가져오기
+
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-      
+
       <div className="container1">
         <TabBar /> {/* TabBar 컴포넌트 삽입 */}
         <div className="sec1">
@@ -23,14 +25,24 @@ const MyPorfile = () => {
             <div className='paragraph3'>
               <h2>print("Hello World!")</h2>
             </div>
+            <div className='stric'>
+          {githubId && (
+            <img
+              src={`https://ghchart.rshah.org/${githubId}`}
+              alt={`${githubId}'s GitHub Contribution Chart`}
+              className="github-chart"
+            />
+          )}
+        </div>
           </div>
           <div className='sec1-ch'>
             <Myprofilecap style={{ width: '300px', height: '300px' }} />
           </div>
-        </div>      
+        </div>
+       
       </div>
     </>
   );
 };
 
-export default MyPorfile;
+export default MyProfile;
