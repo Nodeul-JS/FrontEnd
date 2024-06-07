@@ -13,7 +13,8 @@ const MyProfilecap = () => {
   const [level, setLevel] = useState(1);
   const [experience, setExperience] = useState(0);
   const [experienceRatio, setExperienceRatio] = useState(0);
-
+  localStorage.setItem('githubId',githubId);
+  
   useEffect(() => {
     const fetchCommitStatus = async () => {
       try {
