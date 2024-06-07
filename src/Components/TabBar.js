@@ -83,16 +83,15 @@ const TabBar = () => {
             </div>
             {/* 뱃지 내용 */}
             <div className="badge-list">
-              <ul className="badge-list-ch">
-                {badges.map((badge) => (
-                  <li key={badge.badgeId} className="badge-item">
-                    <img src={`/images/badge_${badge.badgeId}.png`} alt={badge.badgeName} className="badge-image" />
-                    <div>
-                      <h3>{badge.badgeName}</h3>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              {badges.map((badge) => (
+                <div key={badge.badgeId} className="badge-item">
+                  <img src={`/images/badge_${badge.badgeId}.png`} alt={badge.badgeName} className="badge-image" />
+                  <div className="badge-description">{badge.description}</div>
+                  <div>
+                    <h3>{badge.badgeName}</h3>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
