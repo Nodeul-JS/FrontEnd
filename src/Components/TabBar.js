@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-=======
 import React, { useState, useEffect } from 'react';
->>>>>>> 23fcbde91ec22458b27e8c18c5853b8b2c407e48
 import '../cssfile/tabbar.css'; // CSS 파일 import
 import '../cssfile/modal.css'; // CSS 파일 import
 import { useNavigate } from "react-router-dom";
@@ -10,24 +6,15 @@ import axios from 'axios';
 
 const TabBar = () => {
   let githubId = localStorage.getItem('githubId'); // Assuming userId is stored in localStorage
-<<<<<<< HEAD
-  // const [githubId, setGithubId] = useState(localStorage.getItem('githubId'))
-=======
 
->>>>>>> 23fcbde91ec22458b27e8c18c5853b8b2c407e48
   const [badges, setBadges] = useState([]);
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(()=>{
     githubId = localStorage.getItem('githubId');
-<<<<<<< HEAD
-
   }, [])
-=======
-  },[]);
-  
->>>>>>> 23fcbde91ec22458b27e8c18c5853b8b2c407e48
+
   const handleMyProfileClick = () => {
     console.log(githubId)
     navigate(`/MyProfile/${githubId}?token=${githubId}`);
